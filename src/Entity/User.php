@@ -159,11 +159,13 @@ class User implements UserInterface
 
     public function removeArticle(Article $article): self
     {
-        if ($this->articles->removeElement($article)) {
+//        if ($this->articles->removeElement($article)) {
             // set the owning side to null (unless already changed)
-            if ($article->getAuthor() === $this) {
-                $article->setAuthor(null);
-            }
+//            if ($article->getAuthor() === $this) {
+//                $article->setAuthor(null);
+//            }
+      if($this->articles->contains($article)){
+        $this->articles->removeElement($article);
         }
 
         return $this;
