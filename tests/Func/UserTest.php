@@ -29,7 +29,7 @@ class UserTest extends AbstractEndPoint
   {
 //    dd($this->getResponseFromRequest(Request::METHOD_GET, 'api/users'));
     $response = $this->getResponseFromRequest(
-        Request::METHOD_GET,
+        Request::METHOD_POST,
         'api/users',
         $this->getPayload()
             );
@@ -38,7 +38,7 @@ class UserTest extends AbstractEndPoint
 
 //    dd($responseDecoded);
 
-    self::assertEquals(Response::HTTP_OK, $response->getStatusCode());
+    self::assertEquals(Response::HTTP_CREATED, $response->getStatusCode());
     self::assertJson($responseContent);
     self::assertNotEmpty($responseDecoded);
   }
