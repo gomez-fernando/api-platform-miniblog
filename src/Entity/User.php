@@ -66,11 +66,13 @@ class User implements UserInterface
 
   /**
    * @ORM\Column(type="datetime")
+   * @Groups({"user_read", "user_details_read","article_read", "article_details_read"})
    */
   private $createdAt;
 
   /**
    * @ORM\Column(type="datetime", nullable=true)
+   * @Groups({"user_read", "user_details_read","article_read", "article_details_read"})
    */
   private $updatedAt;
 
